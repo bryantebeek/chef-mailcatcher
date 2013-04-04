@@ -11,7 +11,6 @@ Requirements
 
 Attributes
 ----------
-#### mailcatcher::default
 <table>
   <tr>
     <th>Key</th>
@@ -20,16 +19,21 @@ Attributes
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['mailcatcher']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['mailcatcher']['bin']</tt></td>
+    <td>String</td>
+    <td>The location of the mailcatch bin</td>
+    <td><tt>/usr/bin/env catchmail</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['mailcatcher']['port']</tt></td>
+    <td>Integer</td>
+    <td>The smtp incoming port number for MailCatcher to use</td>
+    <td><tt>1025</tt></td>
   </tr>
 </table>
 
 Usage
 -----
-#### mailcatcher::default
 Just include `mailcatcher` in your node's `run_list`:
 
 ```json
