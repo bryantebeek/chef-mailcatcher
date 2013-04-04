@@ -1,6 +1,6 @@
 MailCatcher Cookbook
 ====================
-Allows for installation of MailCatcher on Debian boxes.
+Allows for installation of MailCatcher on Debian (/Ubuntu) boxes.
 
 Requirements
 ------------
