@@ -21,7 +21,7 @@ Attributes
   <tr>
     <td><tt>['mailcatcher']['bin']</tt></td>
     <td>String</td>
-    <td>The location of the mailcatch bin</td>
+    <td>The location of the MailCatcher binary file</td>
     <td><tt>/usr/bin/env catchmail</tt></td>
   </tr>
   <tr>
