@@ -29,7 +29,6 @@ gem_package "mailcatcher"
 # Start MailCatcher
 bash "mailcatcher" do
   code "mailcatcher --http-ip #{eth1_ip} --smtp-port #{node['mailcatcher']['port']}"
-  only_if "ping #{(eth1_ip)}:#{node['mailcatcher']['port']} | grep unknown"
 end
 
 # Configure MailCatcher
