@@ -17,6 +17,9 @@
 # limitations under the License.
 #
 
+# This is a dependency of MailCatcher
+package "libsqlite3-dev"
+
 # Get eth1 ip
 eth1_ip = node[:network][:interfaces][:eth1][:addresses].select{|key,val| val[:family] == 'inet'}.flatten[0]
 
