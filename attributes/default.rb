@@ -19,3 +19,4 @@
 
 default['mailcatcher']['bin'] = '/usr/bin/env catchmail'
 default['mailcatcher']['port'] = '1025'
+default['mailcatcher']['eth'] = 'eth1'

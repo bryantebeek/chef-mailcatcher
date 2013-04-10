@@ -30,6 +30,12 @@ Attributes
     <td>The smtp incoming port number for MailCatcher to use</td>
     <td><tt>1025</tt></td>
   </tr>
+  <tr>
+    <td><tt>['mailcatcher']['eth']</tt></td>
+    <td>String</td>
+    <td>The ethernet interface to use for MailCatcher</td>
+    <td><tt>eth1</tt></td>
+  </tr>
 </table>
 
 Usage
