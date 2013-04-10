@@ -7,7 +7,6 @@ Requirements
 
 #### packages
 - `php` - MailCatcher runs using PHP.
-- `apache2` - MailCatcher uses apache2 to display the front-end.
 
 Attributes
 ----------

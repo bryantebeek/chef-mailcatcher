@@ -34,10 +34,9 @@ end
 
 # Configure MailCatcher
 template "#{node['php']['ext_conf_dir']}/mailcatcher.ini" do
-  source "mailcatcher.ini.erb"
-  owner "root"
-  group "root"
-  mode "0644"
-  action :create
-  notifies :restart, resources("service[apache2]"), :delayed
+    source "mailcatcher.ini.erb"
+    owner "root"
+    group "root"
+    mode "0644"
+    action :create
 end
