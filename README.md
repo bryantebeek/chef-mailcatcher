@@ -4,9 +4,7 @@ Allows for installation of MailCatcher on Debian (/Ubuntu) boxes.
 
 Requirements
 ------------
-
-#### packages
-- `php` - MailCatcher runs using PHP.
+Currently there are no requirements to install MailCatcher.
 
 Attributes
 ----------

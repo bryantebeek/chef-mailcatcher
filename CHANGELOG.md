@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of MailCatcher.
 
+## 0.1.2:
+
+* Remove the dependency on PHP
+* Added recipe ```mailcatcher::php``` for those using PHP
+
 ## 0.1.1:
 
 * Ethernet interface is now configurable
