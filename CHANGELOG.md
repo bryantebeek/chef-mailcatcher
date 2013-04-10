@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of MailCatcher.
 
+## 0.1.3:
+
+* Remove the 'eth' configuration
+* Added the http-ip, http-port, smtp-ip and smtp-port configurations
+
 ## 0.1.2:
 
 * Remove the dependency on PHP
