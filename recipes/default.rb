@@ -28,7 +28,7 @@ gem_package "mailcatcher"
 
 # Start MailCatcher
 bash "mailcatcher" do
-  code "mailcatcher --http-ip #{eth1_ip} --smtp-port #{node['mailcatcher']['port']}"
+    not_if "ps ax  | grep -v grep | grep mailcatcher"
     code "mailcatcher --http-ip #{eth_ip} --smtp-port #{node['mailcatcher']['port']}"
 end
 
