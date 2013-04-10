@@ -17,7 +17,8 @@
 # limitations under the License.
 #
 
-# This is a dependency of MailCatcher
+# These are dependencies of MailCatcher
+include_recipe "php"
 package "libsqlite3-dev"
 
 # Get eth ip
