@@ -18,5 +18,9 @@
 #
 
 default['mailcatcher']['bin'] = '/usr/bin/env catchmail'
-default['mailcatcher']['port'] = '1025'
-default['mailcatcher']['eth'] = 'eth1'
+
+default['mailcatcher']['http-ip'] = '127.0.0.1'
+default['mailcatcher']['http-port'] = 1080
+
+default['mailcatcher']['smtp-ip'] = '127.0.0.1'
+default['mailcatcher']['smtp-port'] = 1025

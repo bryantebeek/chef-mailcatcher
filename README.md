@@ -35,16 +35,28 @@ Attributes
     <td><tt>/usr/bin/env catchmail</tt></td>
   </tr>
   <tr>
-    <td><tt>['mailcatcher']['port']</tt></td>
+    <td><tt>['mailcatcher']['smtp-ip']</tt></td>
+    <td>String</td>
+    <td>The ip address of the smtp server</td>
+    <td><tt>127.0.0.1</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['mailcatcher']['smtp-port']</tt></td>
     <td>Integer</td>
-    <td>The smtp incoming port number for MailCatcher to use</td>
+    <td>The port of the smtp server</td>
     <td><tt>1025</tt></td>
   </tr>
   <tr>
-    <td><tt>['mailcatcher']['eth']</tt></td>
+    <td><tt>['mailcatcher']['http-ip']</tt></td>
     <td>String</td>
-    <td>The ethernet interface to use for MailCatcher</td>
-    <td><tt>eth1</tt></td>
+    <td>The ip address of the http server</td>
+    <td><tt>127.0.0.1</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['mailcatcher']['http-port']</tt></td>
+    <td>Integer</td>
+    <td>The port of the http server</td>
+    <td><tt>1080</tt></td>
   </tr>
 </table>
 
