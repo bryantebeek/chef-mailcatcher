@@ -1,4 +1,4 @@
-MailCatcher Cookbook (v0.1.3)
+MailCatcher Cookbook
 ====================
 Allows for installation of MailCatcher on Debian (/Ubuntu) boxes.
 
