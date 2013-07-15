@@ -6,17 +6,22 @@
 #
 
 # This is a dependency of MailCatcher
-package "libsqlite3-dev"
+case node['platform_family']
+    when "debian"
+        package "sqlite"
+    when "rhel", "fedora", "suse"
+        package "libsqlite3-dev"
+end
 
 # Install MailCatcher
 gem_package "mailcatcher"
 
 # Generate the command
 command = ["mailcatcher"]
-command << "--http-ip " + node['mailcatcher']['http-ip']
-command << "--http-port " + node['mailcatcher']['http-port']
-command << "--smtp-ip " + node['mailcatcher']['smtp-ip']
-command << "--smtp-port " + node['mailcatcher']['smtp-port']
+command << "--http-ip " + node['mailcatcher']['http-ip'].to_s
+command << "--http-port " + node['mailcatcher']['http-port'].to_s
+command << "--smtp-ip " + node['mailcatcher']['smtp-ip'].to_s
+command << "--smtp-port " + node['mailcatcher']['smtp-port'].to_s
 command = command.join(" ")
 
 # Start MailCatcher

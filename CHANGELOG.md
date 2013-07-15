@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of MailCatcher.
 
+## 0.1.4:
+
+* Support for CentOS (sqlite instead of libsqlite3-dev)
+
 ## 0.1.3:
 
 * Remove the 'eth' configuration
