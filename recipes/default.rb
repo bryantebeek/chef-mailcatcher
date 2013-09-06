@@ -18,10 +18,10 @@ gem_package "mailcatcher"
 
 # Generate the command
 command = ["mailcatcher"]
-command << "--http-ip " + node['mailcatcher']['http-ip'].to_s
-command << "--http-port " + node['mailcatcher']['http-port'].to_s
-command << "--smtp-ip " + node['mailcatcher']['smtp-ip'].to_s
-command << "--smtp-port " + node['mailcatcher']['smtp-port'].to_s
+command << "--http-ip #{node['mailcatcher']['http-ip']}"
+command << "--http-port #{node['mailcatcher']['http-port']}"
+command << "--smtp-ip #{node['mailcatcher']['smtp-ip']}"
+command << "--smtp-port #{node['mailcatcher']['smtp-port']}"
 command = command.join(" ")
 
 # Start MailCatcher
