@@ -26,6 +26,6 @@ command = command.join(" ")
 
 # Start MailCatcher
 bash "mailcatcher" do
-    not_if "ps ax | grep -E '#{command}'"
+    not_if "ps ax | grep -E 'mailcatche[r]'"
     code command
 end
