@@ -9,6 +9,7 @@
 case node['platform_family']
     when "debian"
         package "sqlite"
+        package "libsqlite3-dev"
     when "rhel", "fedora", "suse"
         package "libsqlite3-dev"
 end
