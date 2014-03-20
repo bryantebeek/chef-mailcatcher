@@ -58,6 +58,12 @@ Attributes
     <td>The port of the http server</td>
     <td><tt>1080</tt></td>
   </tr>
+  <tr>
+    <td><tt>['mailcatcher']['multiple']</tt></td>
+    <td>Boolean</td>
+    <td>Manage multiple instances</td>
+    <td><tt>false</tt></td>
+  </tr>
 </table>
 
 License and Authors
