@@ -17,16 +17,38 @@ end
 # Install MailCatcher
 gem_package "mailcatcher"
 
-# Generate the command
-command = ["mailcatcher"]
-command << "--http-ip #{node['mailcatcher']['http-ip']}"
-command << "--http-port #{node['mailcatcher']['http-port']}"
-command << "--smtp-ip #{node['mailcatcher']['smtp-ip']}"
-command << "--smtp-port #{node['mailcatcher']['smtp-port']}"
-command = command.join(" ")
+if node['mailcatcher']['multiple']
+  node['mailcatcher']['instances'].each_pair do |name, instance|
 
-# Start MailCatcher
-bash "mailcatcher" do
+    # Generate the command for this instance
+    command = ['mailcatcher']
+    command << "#{name}"
+    command << "--http-ip #{ instance['http-ip'] || node['mailcatcher']['http-ip'] }"
+    command << "--http-port #{ instance['http-port'] || node['mailcatcher']['http-port'] }"
+    command << "--smtp-ip #{ instance['smtp-ip'] || node['mailcatcher']['smtp-ip'] }"
+    command << "--smtp-port #{ instance['smtp-port'] || node['mailcatcher']['smtp-port'] }"
+    command = command.join(" ")
+
+    # Start MailCatcher instance
+    bash "mailcatcher-#{name}" do
+      not_if "ps ax | grep -E 'mailcatche[r] #{name}'"
+      code command
+    end
+  end
+else
+
+  # Generate the command
+  command = ["mailcatcher"]
+  command << "--http-ip #{node['mailcatcher']['http-ip']}"
+  command << "--http-port #{node['mailcatcher']['http-port']}"
+  command << "--smtp-ip #{node['mailcatcher']['smtp-ip']}"
+  command << "--smtp-port #{node['mailcatcher']['smtp-port']}"
+  command = command.join(" ")
+
+  # Start MailCatcher
+  bash "mailcatcher" do
     not_if "ps ax | grep -E 'mailcatche[r]'"
     code command
+  end
 end
+
