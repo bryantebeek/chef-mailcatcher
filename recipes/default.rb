@@ -13,7 +13,8 @@ case node['platform_family']
         package "make"
         package "g++"
     when "rhel", "fedora", "suse"
-        package "libsqlite3-dev"
+        package "gcc-c++"
+        package "sqlite-devel"
 end
 
 # Install MailCatcher
