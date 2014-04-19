@@ -25,7 +25,7 @@ if node['mailcatcher']['multiple']
 
     # Generate the command for this instance
     command = ['mailcatcher']
-    command << "#{name}"
+    command << #{name}
     command << "--http-ip #{ instance['http-ip'] || node['mailcatcher']['http-ip'] }"
     command << "--http-port #{ instance['http-port'] || node['mailcatcher']['http-port'] }"
     command << "--smtp-ip #{ instance['smtp-ip'] || node['mailcatcher']['smtp-ip'] }"
@@ -54,4 +54,3 @@ else
     code command
   end
 end
-
