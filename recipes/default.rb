@@ -5,17 +5,8 @@
 # Copyright 2013, Bryan te Beek
 #
 
-# This is a dependency of MailCatcher
-case node['platform_family']
-    when "debian"
-        package "sqlite"
-        package "libsqlite3-dev"
-        package "make"
-        package "g++"
-    when "rhel", "fedora", "suse"
-        package "gcc-c++"
-        package "sqlite-devel"
-end
+# Install required packages for MailCatcher
+include_recipe 'MailCatcher::dependencies'
 
 # Install MailCatcher
 gem_package "mailcatcher"
