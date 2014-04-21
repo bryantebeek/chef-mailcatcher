@@ -1,6 +1,6 @@
 MailCatcher Cookbook
 ====================
-Allows for installation of MailCatcher on Debian (/Ubuntu) boxes.
+Allows for installation of MailCatcher on Debian (/Ubuntu) and RHEL-based boxes.
 
 Recipes
 ----------
@@ -10,12 +10,16 @@ Recipes
     <th>Explanation</th>
   </tr>
   <tr>
-    <td><tt>mailcatcher</tt></td>
+    <td><tt>MailCatcher</tt></td>
     <td>Basic installation of MailCatcher</td>
   </tr>
   <tr>
-    <td><tt>mailcatcher::php</tt></td>
+    <td><tt>MailCatcher::php</tt></td>
     <td>Sets the php <tt>sendmail_path</tt> to use MailCatcher</td>
+  </tr>
+  <tr>
+    <td><tt>MailCatcher::postfix</tt></td>
+    <td>Setup Postfix to use MailCatcher as a <tt>relayhost</tt></td>
   </tr>
 </table>
 

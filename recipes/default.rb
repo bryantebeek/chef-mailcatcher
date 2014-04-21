@@ -5,16 +5,8 @@
 # Copyright 2013, Bryan te Beek
 #
 
-# This is a dependency of MailCatcher
-case node['platform_family']
-    when "debian"
-        package "sqlite"
-        package "libsqlite3-dev"
-        package "make"
-        package "g++"
-    when "rhel", "fedora", "suse"
-        package "libsqlite3-dev"
-end
+# Install required packages for MailCatcher
+include_recipe 'MailCatcher::dependencies'
 
 # Install MailCatcher
 gem_package "mailcatcher"
@@ -24,7 +16,7 @@ if node['mailcatcher']['multiple']
 
     # Generate the command for this instance
     command = ['mailcatcher']
-    command << "#{name}"
+    command << #{name}
     command << "--http-ip #{ instance['http-ip'] || node['mailcatcher']['http-ip'] }"
     command << "--http-port #{ instance['http-port'] || node['mailcatcher']['http-port'] }"
     command << "--smtp-ip #{ instance['smtp-ip'] || node['mailcatcher']['smtp-ip'] }"
@@ -53,4 +45,3 @@ else
     code command
   end
 end
-
