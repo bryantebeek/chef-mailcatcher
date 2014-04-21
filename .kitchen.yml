@@ -1,0 +1,25 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: debian-7.4
+    driver:
+      box: chef/debian-7.4
+  - name: centos-6.5
+    driver:
+      box: chef/centos-6.5
+
+suites:
+  - name: default
+    run_list:
+      - recipe[MailCatcher::default]
+    attributes:
+  - name: postfix
+    run_list:
+      - recipe[MailCatcher::postfix]
+    excludes:
+      - debian-7.4
