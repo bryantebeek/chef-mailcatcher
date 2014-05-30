@@ -12,6 +12,7 @@ case node['platform_family']
         package "libsqlite3-dev"
         package "make"
         package "g++"
+        package "ruby-dev"
     when "rhel", "fedora", "suse"
         package "libsqlite3-dev"
 end
