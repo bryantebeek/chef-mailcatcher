@@ -1,4 +1,4 @@
-name             'MailCatcher'
+name             'mailcatcher'
 maintainer       'Bryan te Beek'
 maintainer_email 'bryantebeek@gmail.com'
 license          'Apache 2.0'
