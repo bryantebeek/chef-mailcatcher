@@ -8,11 +8,17 @@
 # This is a dependency of MailCatcher
 case node['platform_family']
     when "debian"
+        # remove ruby 1.9
+        %w(ruby ruby-dev).each do |deb|
+            package deb do
+                action :remove
+            end
+        end
         package "sqlite"
         package "libsqlite3-dev"
         package "make"
         package "g++"
-        package "ruby-dev"
+        package "ruby2.0-dev"
     when "rhel", "fedora", "suse"
         package "libsqlite3-dev"
 end
